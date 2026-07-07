@@ -1,0 +1,207 @@
+:root {
+  --bg: #f2f6f2;
+  --ink: #1e2d27;
+  --muted: #5c6d64;
+  --accent: #2f6f5e;
+  --accent-soft: #cfe8dc;
+  --card-bg: #ffffff;
+  --border: #dde6e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+.conteneur-principal {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.bloc-titre {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.losange {
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-soft);
+  border: 2px solid var(--accent);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.bouton-carte {
+  padding: 0.6rem 1.6rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.bouton-carte:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.zone-recherche {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.8rem;
+}
+
+.zone-recherche input[type="search"] {
+  width: 100%;
+  max-width: 260px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background-color: var(--card-bg);
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.zone-recherche input[type="search"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#compteur {
+  text-align: left;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: -0.8rem 0 1.2rem;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.voir-plus-global {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.voir-plus-global:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.conteneur-supplementaire {
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.carte-ilot {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.carte-ilot:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 45, 39, 0.08);
+}
+
+.carte-ilot::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+}
+
+.nom-ilot {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1rem 1.2rem 0.6rem;
+}
+
+.voir-plus {
+  display: block;
+  margin: 0 1.2rem 1rem;
+  padding: 0.5rem 0.9rem;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.voir-plus:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.voir-plus:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.details-ilot {
+  padding: 0 1.2rem 1.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  border-top: 1px solid var(--border);
+}
+
+.details-ilot p {
+  margin: 0.6rem 0 0;
+}
+
+.details-ilot.cache {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+}

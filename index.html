@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+   <link rel="stylesheet" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adataviz</title>
+  </head>
+  
+  <body>
+    <main class="conteneur-principal">
+      <header>
+        <section class="bloc-titre">
+          <span class="losange" aria-hidden="true"></span>
+          <h1>Ilots de fraicheur - Espace vert "frais"</h1>
+        </section>
+        <button class="bouton-carte">CARTE</button>
+      </header>
+
+      <section class="zone-recherche">
+        <input type="search" placeholder="rechercher" />
+      </section>
+
+      <p id="compteur">986 ilots trouves</p>
+
+      <section id="app">
+        <section class="carte-ilot">
+          <h2 class="nom-ilot">Jardinieres du Boulevard Bourdon</h2>
+          <button class="voir-plus">voir plus</button>
+          <section class="details-ilot">
+            <p>Adresse : 2 Boulevard Bourdon</p>
+            <p>Arrondissement : 75004</p>
+            <p>Type : Decorations sur la voie publique</p>
+            <p>Ouverture : Ouvert 24h/24</p>
+          </section>
+        </section>
+
+        <section class="carte-ilot">
+          <h2 class="nom-ilot">Square des Buttes Chaumont</h2>
+          <button class="voir-plus">voir plus</button>
+          <section class="details-ilot">
+            <p>Adresse : 1 Rue Botzaris</p>
+            <p>Arrondissement : 75019</p>
+            <p>Type : Parc et jardin</p>
+            <p>Ouverture : Ouvert en canicule, Ouverture estivale nocturne</p>
+          </section>
+        </section>
+
+        <section class="carte-ilot">
+          <h2 class="nom-ilot">Bibliotheque Marguerite Duras</h2>
+          <button class="voir-plus">voir plus</button>
+          <section class="details-ilot">
+            <p>Adresse : 115 Rue de Tolbiac</p>
+            <p>Arrondissement : 75013</p>
+            <p>Type : Bibliotheque climatisee</p>
+            <p>Ouverture : Horaires non renseignes</p>
+          </section>
+        </section>
+
+        <section class="carte-ilot">
+          <h2 class="nom-ilot">Piscine Keller</h2>
+          <button class="voir-plus">voir plus</button>
+          <section class="details-ilot">
+            <p>Adresse : 14 Rue de l'Ingenieur Keller</p>
+            <p>Arrondissement : 75015</p>
+            <p>Type : Piscine</p>
+            <p>Ouverture : Ouvert en canicule</p>
+          </section>
+        </section>
+      </section>
+
+      <button class="voir-plus-global">VOIR PLUS</button>
+    </main>
+
+    <section class="conteneur-supplementaire" id="app-supplementaire">
+      <!-- Les ilots supplementaires charges par pagination viendront ici -->
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
