@@ -1,80 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-   <link rel="stylesheet" href="src/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>adataviz</title>
-  </head>
-  
-  <body>
-    <main class="conteneur-principal">
-      <header>
-        <section class="bloc-titre">
-          <span class="losange" aria-hidden="true"></span>
-          <h1>Ilots de fraicheur - Espace vert "frais"</h1>
-        </section>
-        <button class="bouton-carte">CARTE</button>
-      </header>
+<head>
+<meta charset="UTF-8">
+<title>Que faire a Paris</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
 
-      <section class="zone-recherche">
-        <input type="search" placeholder="rechercher" />
-      </section>
+<div class="app">
 
-      <p id="compteur">986 ilots trouves</p>
+  <div class="header">
+    <div class="logo">
+      <div class="logo-icon">🎭</div>
+      <span class="logo-title"> L'agenda Parisien </span>
+    </div>
+    <div class="header-actions">
+      <button class="btn-theme" id="theme-toggle">🌙</button>
+      <button class="btn-carte">Carte</button>
+    </div>
+  </div>
 
-      <section id="app">
-        <section class="carte-ilot">
-          <h2 class="nom-ilot">Jardinieres du Boulevard Bourdon</h2>
-          <button class="voir-plus">voir plus</button>
-          <section class="details-ilot">
-            <p>Adresse : 2 Boulevard Bourdon</p>
-            <p>Arrondissement : 75004</p>
-            <p>Type : Decorations sur la voie publique</p>
-            <p>Ouverture : Ouvert 24h/24</p>
-          </section>
-        </section>
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="rechercher">
+  </div>
 
-        <section class="carte-ilot">
-          <h2 class="nom-ilot">Square des Buttes Chaumont</h2>
-          <button class="voir-plus">voir plus</button>
-          <section class="details-ilot">
-            <p>Adresse : 1 Rue Botzaris</p>
-            <p>Arrondissement : 75019</p>
-            <p>Type : Parc et jardin</p>
-            <p>Ouverture : Ouvert en canicule, Ouverture estivale nocturne</p>
-          </section>
-        </section>
+  <p class="count">1240 evenements trouves</p>
 
-        <section class="carte-ilot">
-          <h2 class="nom-ilot">Bibliotheque Marguerite Duras</h2>
-          <button class="voir-plus">voir plus</button>
-          <section class="details-ilot">
-            <p>Adresse : 115 Rue de Tolbiac</p>
-            <p>Arrondissement : 75013</p>
-            <p>Type : Bibliotheque climatisee</p>
-            <p>Ouverture : Horaires non renseignes</p>
-          </section>
-        </section>
+  <div class="grid">
 
-        <section class="carte-ilot">
-          <h2 class="nom-ilot">Piscine Keller</h2>
-          <button class="voir-plus">voir plus</button>
-          <section class="details-ilot">
-            <p>Adresse : 14 Rue de l'Ingenieur Keller</p>
-            <p>Arrondissement : 75015</p>
-            <p>Type : Piscine</p>
-            <p>Ouverture : Ouvert en canicule</p>
-          </section>
-        </section>
-      </section>
+    <div class="card">
+      <img class="card-image" src="{{cover_url}}" alt="">
+      <div class="card-body">
+        <span class="card-tag-eyebrow concert-color">concert</span>
+        <p class="card-title">Concert de jazz au CENTQUATRE</p>
+        <button class="btn-voir-plus concert">voir plus</button>
+        <div class="card-details">
+          <p>5 Rue Curial, 75019</p>
+          <span class="tag gratuit">gratuit</span>
+        </div>
+      </div>
+    </div>
 
-      <button class="voir-plus-global">VOIR PLUS</button>
-    </main>
+    <div class="card">
+      <img class="card-image" src="{{cover_url}}" alt="">
+      <div class="card-body">
+        <span class="card-tag-eyebrow expo-color">exposition</span>
+        <p class="card-title">Exposition photo a la Gaite Lyrique</p>
+        <button class="btn-voir-plus expo">voir plus</button>
+        <div class="card-details">
+          <p>3 bis Rue Papin, 75003</p>
+          <span class="tag payant">payant</span>
+        </div>
+      </div>
+    </div>
 
-    <section class="conteneur-supplementaire" id="app-supplementaire">
-      <!-- Les ilots supplementaires charges par pagination viendront ici -->
-    </section>
+    <div class="card">
+      <img class="card-image" src="{{cover_url}}" alt="">
+      <div class="card-body">
+        <span class="card-tag-eyebrow atelier-color">atelier</span>
+        <p class="card-title">Atelier creatif pour enfants</p>
+        <button class="btn-voir-plus atelier">voir plus</button>
+        <div class="card-details">
+          <p>Carreau du Temple, 75003</p>
+          <span class="tag gratuit">gratuit</span>
+        </div>
+      </div>
+    </div>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <div class="card">
+      <img class="card-image" src="{{cover_url}}" alt="">
+      <div class="card-body">
+        <span class="card-tag-eyebrow spectacle-color">spectacle</span>
+        <p class="card-title">Spectacle de rue place de la Bastille</p>
+        <button class="btn-voir-plus spectacle">voir plus</button>
+        <div class="card-details">
+          <p>Place de la Bastille, 75011</p>
+          <span class="tag gratuit">gratuit</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="btn-voir-plus-global">voir plus</button>
+
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+    toggleBtn.textContent = '☀️';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      root.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+      toggleBtn.textContent = '🌙';
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      toggleBtn.textContent = '☀️';
+    }
+  });
+</script>
+
+</body>
+</html>
