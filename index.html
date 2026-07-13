@@ -7,109 +7,108 @@
 </head>
 <body>
 
-<div class="app">
+<main >
 
-  <div class="header">
-    <div class="logo">
-      <div class="logo-icon">🎭</div>
-      <span class="logo-title"> L'agenda Parisien </span>
-    </div>
-    <div class="header-actions">
+  <header class="header">
+    <section class="logo">
+      <i class="logo-icon" aria-hidden="true">🎭</i>
+      <h1 class="logo-title">L'agenda Parisien</h1>
+    </section>
       <button class="btn-theme" id="theme-toggle">🌙</button>
-      <button class="btn-carte">Carte</button>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="search-wrap">
-    <span class="search-icon">🔍</span>
-    <input type="text" placeholder="rechercher">
-  </div>
+  <search class="search-wrap">
+    <i class="search-icon" aria-hidden="true">🔍</i>
+    <input type="text" id="recherche" placeholder="rechercher">
+  </search>
+  
+<section class="filtres">
+  <label>
+  <input type="checkbox" value="gratuit">
+  Gratuit
+</label>
+<label>
+  <input type="checkbox" value="gratuit sous condition">
+  Gratuit Sous Condition
+</label>
+<label>
+  <input type="checkbox" value="payant">
+  Payant
+</label>
+</section>
+  
 
-  <p class="count">1240 evenements trouves</p>
+  <p class="count"></p>
 
   <div class="grid">
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow concert-color">concert</span>
-        <p class="card-title">Concert de jazz au CENTQUATRE</p>
-        <button class="btn-voir-plus concert">voir plus</button>
-        <div class="card-details">
-          <p>5 Rue Curial, 75019</p>
-          <span class="tag gratuit">gratuit</span>
-        </div>
-      </div>
-    </div>
+    
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow concert-color"> </b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus concert"> voir plus </button>
+          <footer class="card-details">
+            <address></address>
+            <b class="tag gratuit"></b>
+          </footer>
+        </section>
+      </article>
+    
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow expo-color">exposition</span>
-        <p class="card-title">Exposition photo a la Gaite Lyrique</p>
-        <button class="btn-voir-plus expo">voir plus</button>
-        <div class="card-details">
-          <p>3 bis Rue Papin, 75003</p>
-          <span class="tag payant">payant</span>
-        </div>
-      </div>
-    </div>
+    
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow expo-color"></b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus expo"> voir plus </button>
+          <footer class="card-details">
+            <address></address>
+            <b class="tag payant"></b>
+          </footer>
+        </section>
+      </article>
+    
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow atelier-color">atelier</span>
-        <p class="card-title">Atelier creatif pour enfants</p>
-        <button class="btn-voir-plus atelier">voir plus</button>
-        <div class="card-details">
-          <p>Carreau du Temple, 75003</p>
-          <span class="tag gratuit">gratuit</span>
-        </div>
-      </div>
-    </div>
+    
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow atelier-color"></b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus atelier"> voir plus </button>
+          <footer class="card-details">
+            <address></address>
+            <b class="tag gratuit"></b>
+          </footer>
+        </section>
+      </article>
+    
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow spectacle-color">spectacle</span>
-        <p class="card-title">Spectacle de rue place de la Bastille</p>
-        <button class="btn-voir-plus spectacle">voir plus</button>
-        <div class="card-details">
-          <p>Place de la Bastille, 75011</p>
-          <span class="tag gratuit">gratuit</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
+    
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow spectacle-color"></b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus spectacle"> voir plus </button>
+          <footer class="card-details">
+            <address></address>
+            <b class="tag gratuit"></b>
+          </footer>
+        </section>
+      </article>
+ </div>
 
   <button class="btn-voir-plus-global">voir plus</button>
 
-</div>
+</main>
+<div id="app"></div>
 
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
-    root.setAttribute('data-theme', 'dark');
-    toggleBtn.textContent = '☀️';
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      root.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-      toggleBtn.textContent = '🌙';
-    } else {
-      root.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-      toggleBtn.textContent = '☀️';
-    }
-  });
-</script>
+<script type="module" src="src/main.js"></script>
 
 </body>
 </html>
